@@ -1,7 +1,9 @@
-import './App.css';
+import TodoContainer from './components/TodoContainer';
 
 function App() {
-  return (null);
+  return (
+    <TodoContainer />
+  );
 }
 
 export default App;
