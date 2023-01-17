@@ -1,0 +1,12 @@
+.navBar ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.link a{
+  text-decoration: unset;
+  color: black;
+}
