@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import TodoContainer from './components/TodoContainer';
 import './App.css';
+import Navbar from './components/Navbar';
+import About from './pages/About';
+import NotMatch from './pages/NotMatch';
+import AboutSinglePage from './pages/AboutSinglePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<TodoContainer />} />
+        <Route path="/about">
+          <Route index element={<About />} />
+          <Route path=":id" element={<AboutSinglePage />} />
+        </Route>
+        <Route path="*" element={<NotMatch />} />
+      </Routes>
+    </>
   );
 }
 
